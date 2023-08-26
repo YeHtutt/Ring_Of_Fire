@@ -1,0 +1,26 @@
+.player {
+    display: flex;
+    align-items: center;
+
+    background-color: lightgray; //nicht aktive Playes haben den grauen Hintergrund
+
+    width: 200px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+    span {
+        font-size: 24px;
+        margin-left: 16px;
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+}
+
+.player-active { //aktives Player hat der orange hintergrund 
+    background-color: orange;
+}
