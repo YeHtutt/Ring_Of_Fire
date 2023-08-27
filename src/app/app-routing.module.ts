@@ -5,8 +5,8 @@ import { GameComponent } from './game/game.component';
 
 const routes: Routes = [
   { path: '', component: StartScreenComponent },
-  { path: 'game', component: GameComponent }
-];
+  { path: 'game/:id', component: GameComponent }
+];  /** die Schreibeweise "/:id" sagt, dass es nach Doppelpunkt eine Variable kommt hier die ID-Nummer */
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

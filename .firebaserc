@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ringoffire-2nd": {
+      "hosting": {
+        "RingOfFire_2ndTime": [
+          "ringoffire-2nd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ringoffire-2nd"
+  }
+}

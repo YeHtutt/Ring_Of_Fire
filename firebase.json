@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "RingOfFire_2ndTime",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

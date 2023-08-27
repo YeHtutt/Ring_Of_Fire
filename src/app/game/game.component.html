@@ -17,13 +17,13 @@
             style="right: 17px;">
 
         <!--current card-->
-        <img *ngIf="pickCardAnimation" (click)="takeCard()" class="pick-card"
-            src="assets/img/cards/{{ currentCard }}.png" style="right: 17px;">
+        <img *ngIf="game.pickCardAnimation" (click)="takeCard()" class="pick-card"
+            src="assets/img/cards/{{ game.currentCard }}.png" style="right: 17px;">
     </div>
 </div>
 
 
-<app-game-info class="pin-bottom" [card]="currentCard"></app-game-info> <!--porperty binding 'card'=ChildComponent bekommt den Wert des 'currentCard'=ParentComponent -->
+<app-game-info class="pin-bottom" [card]="game.currentCard"></app-game-info> <!--porperty binding 'card'=ChildComponent bekommt den Wert des 'currentCard'=ParentComponent -->
 
 <button mat-fab color="primary" class="btn-add" (click)="openDialog()"> <!-- fab steht für floating action button-->
     <mat-icon>add</mat-icon>
