@@ -1,16 +1,19 @@
 .player {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 85px;
+    overflow: hidden;
 
-    background-color: rgba(73, 72, 72, 0.534); //nicht aktive Playes haben den grauen Hintergrund
+    background-color: lightgray; //nicht aktive Playes haben den grauen Hintergrund
 
-    width: 300px;
-    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
+
+    
 
     span {
         font-size: 18px;
-        margin-left: 16px;
         /*text maximal eine Zeile zu lang wird gelöscht ... ersetzt*/
         text-overflow: ellipsis; 
         white-space: nowrap;
@@ -18,14 +21,13 @@
     }
 
     img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         object-fit: cover;
         border-radius: 100%;
     }
 }
 
-.player-active {
-    //aktives Player hat der orange hintergrund 
+.player-active { //aktives Player hat der orange hintergrund 
     background-color: orange;
 }

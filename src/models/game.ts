@@ -6,6 +6,8 @@ export class Game {
     public pickCardAnimation = false; //Animation beim Kartenziehen wird inizialisiert am Start ist nicht gesetzt
     public currentCard: string = ''; //aktuelle Karte Variable wird definiert
 
+    public player_images: string[] = []; //das Bild für jedes Spieler
+
     constructor() {
         /**alle 52 Karten werden hier erstellt */
         for (let i = 1; i < 14; i++) {
@@ -24,7 +26,8 @@ export class Game {
             playedCards: this.playedCards,
             currentPlayer: this.currentPlayer,
             currentCard: this.currentCard,
-            pickCardAnimation: this.pickCardAnimation
+            pickCardAnimation: this.pickCardAnimation,
+            player_images: this.player_images
         }
     }
 

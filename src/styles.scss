@@ -2,5 +2,17 @@
 body {
     margin: 0;
 }
-html, body { height: 100%; }
+html, body { height: 100%; overflow: hidden; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media (max-width: 720px) { //bis max Bildschirmgröße 720px wird angezeigt
+    .hide-mobile { //alle größeren Pixel wird das Element versteckt
+        display: none;
+    }
+}
+
+@media (min-width: 720px) { //bis min Bildschirmgröße von 720px wird angezeigt
+    .hide-desktop { //alle kleineren Pixel wird das Element versteckt
+        display: none;
+    }
+}

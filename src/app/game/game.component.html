@@ -1,9 +1,18 @@
-<app-player *ngFor="let player of game.players; let i = index;" [ngStyle]="{ 'top.px' : 100 + (80 * i)}"
-    [playerActive]="i == game.currentPlayer" [name]="player" class="player-position"> </app-player>
+<app-player (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index;" [ngStyle]="{ 'top.px' : 50 + (60 * i)}"
+    [playerActive]="i == game.currentPlayer" [name]="player" class="player-position hide-mobile" [profileImage]="game.player_images[i]"> </app-player>
 <!--wenn index ist currentPlayer, dann playerActive(boolean) ein Akuellen Player wird aktiviert -> hellgeleuchtet-->
+<!--Property Binding - profileImage InputVariable bekommt den String des bestimmten Bildes der Indexstelle editierendes JSON-Array-String vom Game-Model zurück -->
 
+<div class="scroll-container">
+<app-player-mobile (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index;" 
+    [playerActive]="i == game.currentPlayer" [name]="player" class="hide-desktop" style="z-index: 2;" [profileImage]="game.player_images[i]"> </app-player-mobile> 
+</div> <!--[ngStyle]="{ 'left.px' : 10 + (80 * i), 'top.px': 0}"-->
 
-<div class="playGround">
+<div class="game-over" *ngIf="gameOver">
+    <img src="assets/img/gameover.png">
+</div>
+
+<div *ngIf="!gameOver" class="playGround">
     <div class="card-stack">
         <!--card stack-->
         <img *ngFor="let card of [1,2,3,4]; let i = index;" src="assets/img/cards/card_cover.png"
@@ -23,8 +32,10 @@
 </div>
 
 
-<app-game-info class="pin-bottom" [card]="game.currentCard"></app-game-info> <!--porperty binding 'card'=ChildComponent bekommt den Wert des 'currentCard'=ParentComponent -->
+<app-game-info *ngIf="!gameOver" class="pin-bottom" [card]="game.currentCard"></app-game-info> <!--porperty binding 'card'=ChildComponent bekommt den Wert des 'currentCard'=ParentComponent -->
 
-<button mat-fab color="primary" class="btn-add" (click)="openDialog()"> <!-- fab steht für floating action button-->
+<button *ngIf="!gameOver" mat-fab color="primary" class="btn-add" (click)="openDialog()"> <!-- fab steht für floating action button-->
     <mat-icon>add</mat-icon>
 </button>
+
+<img class="preloadImage" src="assets/img/cards/{{ game.stack[game.stack.length - 1]}}.png"> <!--bilder vorladen-->
